@@ -1,0 +1,38 @@
+table {
+	border-collapse: collapse; /* remove white space between borders */
+}
+th, td {
+	padding: 3px 6px; /* add space inside columns */
+	border: 1px solid rgba(0, 0, 0, .15); /* add borders to columns */
+}
+tr:last-child th {
+	border-bottom: 0; /* remove border from bottom of th */
+}
+th {
+	background: #4CAF50; /* give background to th */
+	text-align: left; /* align th text to left */
+	height: 40px; /* make th larger */
+}
+td {
+	word-break: break-word; /* break larger words */
+}
+
+.tablewrap {
+	overflow: auto; /* add scollbars if needed */
+	width: 100%; /* make width 100% */
+	margin-bottom: 15px; /* add space under table */
+}
+
+.table-body {
+	width: fit-content;
+	overflow: auto; /* add scollbars if needed */
+	max-height: 400px; /* max height of table */
+}
+
+.col1, .col3, .col4, .col5 {
+	width: 120px;
+	min-width: 120px;
+}
+.col2 {
+	min-width: 300px;
+}

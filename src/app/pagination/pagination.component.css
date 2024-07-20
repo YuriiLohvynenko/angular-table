@@ -1,0 +1,47 @@
+.pagination a {
+	color: black; /* text color */
+	float: left; /* float to left */
+	padding: 8px 16px; /* add space inside link */
+	text-decoration: none; /* remove underline */
+	transition: background-color .3s; /* transition for hover */
+	border: 1px solid #ddd; /* border around link */
+	margin: 0 4px; /* space around links */
+}
+
+.pagination a.active {
+	background: #4CAF50; /* background color */
+	color: white; /* text color */
+	border: 1px solid #4CAF50; /* border around link */
+}
+
+.pagination a:hover:not(.active) {
+	background: #ddd; /* background color */
+}
+
+select {
+	width: 150px;
+	font-size: 16px; /* text size */
+	border: 1px solid #ccc; /* border around select box */
+	height: 34px;
+	padding: 3px 6px;
+	-webkit-appearance: none; /* disable brower defaults */
+	-moz-appearance: none; /* disable brower defaults */
+	appearance: none; /* disable brower defaults */
+}
+select::-ms-expand { 
+	display: none; /* remove default arrow in IE 10 and 11 */
+}
+
+/* target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+	select {
+		background:none\9;
+	}
+}
+
+a.disabled {
+	pointer-events: none;
+	cursor: not-allowed; 
+	text-decoration: underline;
+	color: gray;
+ }

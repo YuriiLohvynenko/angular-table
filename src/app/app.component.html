@@ -1,0 +1,34 @@
+<h1>Users</h1>
+<!-- All users data will be displayed in below html table -->
+<div class="container" *ngIf="users.length > 0">
+	<div class="outer-container">
+		<!-- absolute positioned container -->
+		<div class="inner-container tablewrap">
+			<table>
+				<thead>
+					<tr>
+						<th [ngClass]="(header=='email')?'col2':'col1'" *ngFor="let header of columns">{{header}}</th>
+						<th class="col1">Submit</th>
+					</tr>
+				</thead>
+			</table>
+			<div class="table-body">
+				<table>
+					<tbody>
+						<tr *ngFor="let user of pageData">
+							<td [ngClass]="(column=='email')?'col2':'col1'" *ngFor="let column of columns">{{user[column]}}</td>
+							<td class="col1"><button class="submitbutton" (click)="onSubmit(user)">SUBMIT</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- pagination for users data table. We can navigate to each page using buttons provided -->
+<my-pagination  [data]="users" [page]="page" (pageDataToDisplay)="pageDataToDisplay($event)"
+	[count]="users.length"></my-pagination>
+
+<!-- if no data found, below label will be displayed -->
+<h1 *ngIf="users.length == 0"> NO DATA FOUND</h1>

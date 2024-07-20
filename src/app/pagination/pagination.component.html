@@ -1,0 +1,19 @@
+<div *ngIf="data.length > 0">
+    <!-- to give flixibility to select no of rows per page -->
+    Select Rows Per Page : 
+    <select [(ngModel)]='perPage' (change)="onLimitChange()">
+        <option [value]="10">10</option>
+        <option [value]="20">20</option>
+        <option [value]="50">50</option>
+        <option [value]="100">100</option>
+    </select>
+
+    <!-- to navigate between all pages -->
+    <div class="pagination" style="padding-top: 20px;">
+        <a [class.disabled]="selectedPage == 1" (click)="selectedPage != 1 && onPrev()">&laquo;</a>
+        <a (click)="onPageSelect(i)" [ngClass]="{
+        'active':i === selectedPage
+        }" *ngFor="let i of getPages()"> {{i}} </a>
+        <a [class.disabled]="selectedPage == getPages().length" (click)="selectedPage != getPages().length && onNext()">&raquo;</a>
+    </div>
+</div>
